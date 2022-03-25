@@ -46,7 +46,9 @@
                   <td>{{todo.date_created}}</td>
                   <td>
                     <a href="/update/{{todo.sno}}" type="button" class="btn btn-outline-dark mx-1 btn-sm">Update</button>
-                    <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark mx-1 btn-sm">Delete</button></td>
+                    <a href="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark mx-1 btn-sm">Delete</button>
+                    <!-- <a href="/done/{{todo.flag}}" type="button" class="btn btn-outline-success mx-1 btn-sm">Mark as Done</button> -->
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

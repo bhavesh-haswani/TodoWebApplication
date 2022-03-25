@@ -13,6 +13,7 @@ class Todo(db.Model):
     title = db.Column(db.String(200), nullable=False)
     desc = db.Column(db.String(500), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.now)
+    # flag = db.Column(db.String(100), nullable=False)
     # date_created = db.Column(db.Time, default=time.ctime())
     
     def __repr__(self) -> str:
@@ -24,6 +25,7 @@ def hello_world():
         title = request.form['title']
         desc = request.form['desc']
         todo = Todo(title=title, desc=desc)
+        # todo = Todo(title=title, desc=desc, flag="NotDone")
         # print(title)
         db.session.add(todo)
         db.session.commit()
@@ -72,6 +74,8 @@ def delete(sno):
     db.session.delete(todo)
     db.session.commit()
     return redirect("/")
+
+# @app.route("/done")
 
 if __name__ == "__main__":
     app.run(debug=True)
